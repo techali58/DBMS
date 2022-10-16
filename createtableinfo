@@ -6,7 +6,7 @@ CREATE TABLE info
  address varchar(100),
  city varchar(100),
  age int(100)
-)
+);
 
 INSERT INTO info (firstname,lastname,address,city,age) VALUES('Mickey','Mouse','123 Fantasy Way','Anaheim','73');
 INSERT into info(firstname,lastname,address,city,age) VALUES('Bat','Man','321 Cavern Ave','Gotham','54');
