@@ -1,0 +1,10 @@
+CREATE TABLE student
+(
+    RollNo int(100) primary key AUTO_INCREMENT,
+    Name varchar(100),
+    Branch varchar(100)
+);
+
+INSERT into student(Name, Branch) VALUES('Jay','Computer Science');
+INSERT into student(Name, Branch) VALUES('Suhani','Electronic and Com');
+INSERT into student(Name, Branch) VALUES('Kriti','Electronic and Com')
