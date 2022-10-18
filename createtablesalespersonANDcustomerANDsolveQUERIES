@@ -1,0 +1,55 @@
+/*TABLE SALESPERSON*/
+
+Create TABLE salesperson
+(
+    SNo int(100) PRIMARY KEY,
+    Sname varchar(100),
+    City varchar (100),
+    Comm varchar (100)
+);
+
+INSERT INTO salesperson(SNo,Sname,City,Comm) VALUES ('1001','Peel','London','0.12');
+INSERT INTO salesperson(SNo,Sname,City,Comm) VALUES ('1002','Serres','San Jose','0.13');
+INSERT INTO salesperson(SNo,Sname,City,Comm) VALUES ('1004','Motika','London','0.11');
+INSERT INTO salesperson(SNo,Sname,City,Comm) VALUES ('1007','Rafkin','Barcelona','0.15');
+INSERT INTO salesperson(SNo,Sname,City,Comm) VALUES ('1003','Axelrod','New York','0.1')
+
+/*TABLE CUSTOMER*/
+
+Create TABLE Customer
+(
+    CMM int(100) PRIMARY KEY,
+    Cname varchar(100),
+    City varchar (100),
+    Rating int (100),
+    SNo int (100),
+    FOREIGN KEY (SNo) REFERENCES salesperson (SNo)
+);
+
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('201','Hoffman','London','100','1001');
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('202','Giovanne','Rome','200','1003');
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('203','Liu','San Jose','300','1002');
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('204','Grass','Barcelona','100','1002');
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('206','Clemens','London','300','1007');
+INSERT INTO Customer (CMM,Cname,City,Rating,SNo) VALUES ('207','Pereira','Rome','100','1004')
+
+/*Retrieve  Names and cities of all salespeople in London with commission above 0.12  */(ans:-no salesperspn in london with comm above 0.12)
+
+SELECT Sname, City FROM salesperson WHERE City='London' AND Comm >0.12;
+
+/* Retrieve All salespeople either in Barcelona or in London */
+
+SELECT * FROM `salesperson` WHERE city='Barcelona' or city= 'London' ;
+
+/* Retrieve All salespeople with commission between 0.10 and 0.12. (Boundary values 
+should be excluded). */
+
+SELECT * FROM `salesperson` WHERE Comm>0.1 AND Comm < 0.12;
+
+/* Retrieve All customers excluding those with rating <= 100 unless they are located in 
+Rome */
+
+SELECT * FROM `customer` WHERE NOT Rating=100 OR City='Rome';
+
+
+
