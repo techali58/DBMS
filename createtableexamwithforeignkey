@@ -1,0 +1,15 @@
+CREATE TABLE Exam
+(
+    RollNo int(100),
+    S_code varchar(100),
+    Marks int(100),
+    P_code varchar(100),
+    FOREIGN key (RollNo) REFERENCES student(RollNo)
+);
+
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('1','CS11','50','CS');
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('1','CS12','60','CS');
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('2','EC101','66','EC');
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('2','EC102','70','EC');
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('3','EC101','45','EC');
+INSERT into Exam(RollNo,S_code,Marks,P_code) VALUES('3','EC102','50','EC')
